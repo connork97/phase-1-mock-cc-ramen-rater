@@ -41,6 +41,14 @@ header {
 
 #ramen-detail {
   position: relative;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
+}
+
+#ramen-detail img {
+  position: relative;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
 }
 
 .detail-image {
@@ -71,6 +79,12 @@ form {
   align-items: flex-start;
 }
 
+#ramen-forms {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5vw;
+}
+
 input,
 textarea {
   font-size: 1rem;
@@ -99,4 +113,8 @@ form h4 {
   margin: 0.5rem 0;
   color: white;
   background-color: black;
+}
+
+#deleteButton {
+  position: relative;
 }
