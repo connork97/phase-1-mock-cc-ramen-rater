@@ -50,11 +50,13 @@ const displayRamen = (ramen) => {
 const submitNewRamen = () => {
     ramenForm.addEventListener('submit', (event) => {
         const newRamen = document.createElement('img');
-        newRamen.name = ramenForm.querySelector('#new-name').value,
-        newRamen.restaurant = ramenForm.querySelector('#new-restaurant').value,
-        newRamen.src = ramenForm.querySelector('#new-image').value,
-        newRamen.rating = ramenForm.querySelector('#new-rating').value,
-        newRamen.comment = ramenForm.querySelector('#new-comment').value
+        newRamen.name = ramenForm.querySelector('#new-name').value;
+        newRamen.restaurant = ramenForm.querySelector('#new-restaurant').value;
+        newRamen.src = ramenForm.querySelector('#new-image').value;
+        // newRamen.alt = "Whoops!"; - This Kept Rendering 4 Images when the Source didn't render.
+        newRamen.alt = newRamen.restaurant; // This Works though.
+        newRamen.rating = ramenForm.querySelector('#new-rating').value;
+        newRamen.comment = ramenForm.querySelector('#new-comment').value;
         
         console.log(newRamen);
         imageDivContainer.appendChild(newRamen);
@@ -64,22 +66,6 @@ const submitNewRamen = () => {
     })
 }
 
-/* on form submission (event listener) => {
-        FIRST:
-            grab name.value;
-            grab restauraunt.value;
-            grab image.src;
-            grab rating.value;
-            grab comment.value;
-        SECOND:
-            Create newRamenImage to Put in imageDivContainer;
-            imageDivContainer.appendChild(newRamenImage);
-        THIRD:
-            Reset the Form and Prevent Default;
-    }
-    */
-
-// DOMContentLoaded Event Listener
 
 document.addEventListener('DOMContentLoaded', function() {
     fetchRamens();
